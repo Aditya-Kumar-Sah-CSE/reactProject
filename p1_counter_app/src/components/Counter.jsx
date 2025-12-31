@@ -1,7 +1,7 @@
  
 import { useState } from "react"
 import {Minus,Plus,Undo2,Redo2} from "lucide-react"
-import { Button } from "../ui/button"
+
  function Counter() {
 const [history,setHistory] = useState([0])
 
@@ -39,23 +39,23 @@ const redo = () =>{
     <div className="text-7xl font-bold tabular-nums">{currentValue}</div>
 </div>
 <div className="flex mt-5 justify-center items-center gap-4">
-    <Button onClick={decrement}>
+    <button onClick={decrement}>
         <Minus className="h-4 w-4"/>
-    </Button>
-       <Button onClick={increment}>
+    </button>
+       <button onClick={increment}>
         <Plus className="h-4 w-4"/>
-    </Button>
+    </button>
 </div>
 <div className="flex mt-5 justify-center items-center gap-4">
-    <Button disabled={position===0} className="flex justify-center gap-2 items-center" onClick={undo}  variant={'secondary'}> Undo
+    <button disabled={position===0} className="flex justify-center gap-2 items-center" onClick={undo}  variant={'secondary'}> Undo
         <Undo2 className="h-4 w-4" />
-    </Button>
+    </button>
     <div className="text-sm text-muted-foreground">
         {position+1}/{history.length}
     </div>
-      <Button className="flex justify-center gap-2 items-center" disabled={position === history.length -1} onClick={redo} variant={'secondary'}> Redo
+      <button className="flex justify-center gap-2 items-center" disabled={position === history.length -1} onClick={redo} variant={'secondary'}> Redo
         <Redo2 className="h-4 w-4" />
-    </Button>
+    </button>
 </div>
   </div>
   )
